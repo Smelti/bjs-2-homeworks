@@ -6,10 +6,10 @@ function solveEquation(a, b, c) {
     arr = [];
   }
   else if (task === 0) {
-    arr = [-b / (2 * a)];
+    math.round(arr) = [-b / (2 * a)];
   }
   else if (task > 0) {
-    arr = [(-b + Math.sqrt(b)) / (2 * a),
+    math.round(arr) = [(-b + Math.sqrt(b)) / (2 * a),
        (-b - Math.sqrt(b)) / (2 * a)];
   }
   return arr;
