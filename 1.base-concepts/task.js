@@ -19,5 +19,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let credit = amount - contribution;
   let interestRate = percent / 100 / 12;
   let monthlyPayment = credit * (interestRate + (interestRate / (((1 + interestRate)**countMonths) - 1)));
-  return Math.cell(monthlyPayment).toFixed(2);
+  return Math.round(monthlyPayment).toFixed(2);
 }
