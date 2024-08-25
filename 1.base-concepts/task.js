@@ -15,10 +15,13 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) 
-{
-let credit = contribution - amount;
-let interestRate = percent / 100 / 12;
-let monthlyPayment = credit * (interestRate + (interestRate / (((1 + interestRate)**countMonths) - 1)));
-Math.round(monthlyPayment).toFixed(2);
+function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+  if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
+    return false;
   }
+
+  let credit = contribution - amount;
+  let interestRate = percent / 100 / 12;
+  let monthlyPayment = credit * (interestRate + (interestRate / (((1 + interestRate) ** countMonths) - 1)));
+  return Math.round(monthlyPayment).toFixed(2);
+}
