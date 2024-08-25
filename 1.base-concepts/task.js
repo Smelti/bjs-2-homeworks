@@ -6,11 +6,11 @@ function solveEquation(a, b, c) {
     arr = [];
   }
   else if (task === 0) {
-    math.round(arr) = [-b / (2 * a)];
+    arr = [-b / (2 * a)];
   }
   else if (task > 0) {
-    math.round(arr) = [(-b + Math.sqrt(b)) / (2 * a),
-       (-b - Math.sqrt(b)) / (2 * a)];
+    arr = [(-b + Math.sqrt(task)) / (2 * a),
+       (-b - Math.sqrt(task)) / (2 * a)];
   }
   return arr;
 }
@@ -23,4 +23,3 @@ let monthlyPayment = credit * (interestRate + (interestRate / (((1 + interestRat
     
 console.log(Math.round(monthlyPayment).toFixed(2));
   }
-console.log(calculateTotalMortgage);
