@@ -19,6 +19,9 @@ function summElementsWorker(...arr) {
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
+    if (arr.length === 0) {
+    return 0;
+  }
   return sum;
 }
 
