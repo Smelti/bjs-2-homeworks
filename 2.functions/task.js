@@ -47,8 +47,8 @@ function averageEvenElementsWorker(...arr) {
       sumElemets += arr[i];
       countElements++;
     }
-      if (arr.length === []) {
-      return 0;
+    if (arr.length === []) {
+    return 0;
     }
   }
   let avg = sumElemets / countElements;
