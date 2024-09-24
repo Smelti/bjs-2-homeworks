@@ -14,7 +14,6 @@ Student.prototype.addMarks = function (...marksToAdd) {
     delete this.marks
   }
   this.marks.push(...marksToAdd)
-  }
 }
 
 Student.prototype.getAverage = function () {
