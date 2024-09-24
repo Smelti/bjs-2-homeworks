@@ -10,8 +10,8 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marksToAdd) {
-  if ([] in this.marks) {
-    delete this.marks
+  if (this.marks === 0) {
+    this.marks = [...marksToAdd]
   }
   this.marks.push(...marksToAdd)
 }
