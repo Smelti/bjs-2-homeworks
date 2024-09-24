@@ -10,10 +10,10 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marksToAdd) {
-  if (this.marks.length === 0) {
-    this.marks = [...marksToAdd]
-  } else {
-    this.marks = [...this.marks, ...marksToAdd]
+  if ([] in this.marks) {
+    delete this.marks
+  }
+  this.marks.push(...marksToAdd)
   }
 }
 
@@ -27,6 +27,5 @@ Student.prototype.getAverage = function () {
 Student.prototype.exclude = function (reason) {
   delete this.subject;
   delete this.marks;
-  let excluded = new Object(reason);
   this.excluded = reason;
 }
