@@ -10,11 +10,8 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marksToAdd) {
-  if (this.marks === 0) {
-    this.marks = [...marksToAdd]
-  }
+  Student.hasOwnProperty('marks')
   this.marks.push(...marksToAdd)
-}
 
 Student.prototype.getAverage = function () {
   if (this.marks.length === 0) {
