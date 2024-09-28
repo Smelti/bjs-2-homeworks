@@ -95,5 +95,39 @@ class Library {
   }
 }
 
+class Student {
+  constructor(username) {
+    this.username = username;
+    this.marks = {};
+  }
+  
+  addMark(mark, subject) {
+    if (mark < 2 || mark > 5) {
+      return
+    }
+    if (!this.marks[subject]) {
+      this.marks[subject] = []
+    }
+    this.marks[subject].push(mark)
+  }
 
+  getAverageBySubject(subject) {
+    if (!this.marks[subject]) {
+      return 0;
+    }
+    let sum = this.marks[subject].reduce((acc, item) => acc + item, 0)
+    return sum / this.marks[subject].length
+  }
+
+    getAverage() {
+      const subjects = Object.keys(this.marks) 
+      if (subjects.lenght === 0) {
+        return 0;
+      }
+      const sumAverage = subjects.reduce((acc, subject) => {
+          return acc + this.getAverageBySubject(subject); 
+        }, 0); 
+        return sumAverage / subjects.length; 
+      }
+    }
 
