@@ -17,7 +17,6 @@ function validateCount(count) {
   }
 }
 
-
 class Triangle {
   constructor(a, b, c) {
     this.a = a;
@@ -44,7 +43,7 @@ function getTriangle(a, b, c) {
       get area() {
         return "Ошибка! Треугольник не существует"
       },
-      get peimeter() {
+      get perimeter() {
         return "Ошибка! Треугольник не существует"
       }
     }
