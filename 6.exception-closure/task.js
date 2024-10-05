@@ -3,7 +3,7 @@ function parseCount(count) {
   if (Number.isNaN(parsedCount)) {
     throw new Error("Невалидное значение")
   }
-  if (parsedCount.startsWith("0") && count.length > 1) {
+  if (сount.startsWith("0") && count.length > 1) {
     parsedCount = Number.parseFloat(count.slice(1))
   }
   return parsedCount
