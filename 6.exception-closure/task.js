@@ -4,7 +4,7 @@ function parseCount(count) {
     throw new Error("Невалидное значение")
   }
   if (сount.startsWith("0") && count.length > 1) {
-    parsedCount = Number.parseFloat(count.slice(1))
+    parsedCount = Number.parseInt(count.slice(1), 10)
   }
   return parsedCount
 }
@@ -16,6 +16,7 @@ function validateCount(count) {
     return error
   }
 }
+
 
 class Triangle {
   constructor(a, b, c) {
