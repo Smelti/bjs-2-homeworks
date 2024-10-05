@@ -3,7 +3,7 @@ function parseCount(count) {
   if (Number.isNaN(parsedCount)) {
     throw new Error("Невалидное значение")
   }
-  return count
+  return Parsedcount
 }
 
 function validateCount(count) {
