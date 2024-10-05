@@ -3,7 +3,11 @@ function parseCount(count) {
   if (Number.isNaN(parsedCount)) {
     throw new Error("Невалидное значение")
   }
-  return Parsedcount
+  parsedCount = count
+  if (parsedCount.startsWith("0")) {
+    parsedCount = count.slice(1)
+  }
+  return parsedCount
 }
 
 function validateCount(count) {
@@ -13,6 +17,7 @@ function validateCount(count) {
     return error
   }
 }
+
 
 class Triangle {
   constructor(a, b, c) {
