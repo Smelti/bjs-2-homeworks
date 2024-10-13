@@ -52,8 +52,8 @@ class AlarmClock {
     this.alarmCollection.forEach(alarm => alarm.canCall = true)
   }
 
-  clear() {
-    stop(this.intervalId)
+  clearAlarms() {
+    this.stop()
     this.alarmCollection = [];
   }
 }
