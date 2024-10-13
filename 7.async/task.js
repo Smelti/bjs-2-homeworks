@@ -1,5 +1,4 @@
 class AlarmClock { 
-
   constructor() { 
     this.alarmCollection = [];
     this.intervaldId = null; 
@@ -7,17 +6,13 @@ class AlarmClock {
 
   addClock(time, callback) { 
     this.time = new Date();
-    
     if (!time || !callback) {
       throw new Error("Отсутствуют обязательные аргументы")
     }
-    
     const existAlarm = this.alarmCollection.find(alarm => alarm.time === time); 
-    
     if (existAlarm) {
       console.warn("Уже присутствует звонок на это же время")
     };
-    
     this.alarmCollection.push({ 
       callback, 
       time, 
@@ -28,7 +23,7 @@ class AlarmClock {
   removeClock(time) {
     this.alarmCollection = this.alarmCollection.filter(alarm => alarm.time !== time);
   }
-  
+
   getCurrentFormattedTime() {
     return new Date().toLocaleTimeString().slice(0, 5)
   }
