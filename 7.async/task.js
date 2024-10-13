@@ -1,4 +1,5 @@
 class AlarmClock { 
+
   constructor() { 
     this.alarmCollection = [];
     this.intervalId = null; 
@@ -23,18 +24,18 @@ class AlarmClock {
   removeClock(time) {
     this.alarmCollection = this.alarmCollection.filter(alarm => alarm.time !== time);
   }
-
+  
   getCurrentFormattedTime() {
     return new Date().toLocaleTimeString().slice(0, 5)
   }
 
   start() {
-    if (this.intervaldId) {
+    if (this.intervalId) {
       return;
     }
-    this.intervaldId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.alarmCollection.forEach(alarm => {
-        if (alarm.time === getCurrentFormattedTime() && alarm.canCall) {
+        if (alarm.time === this.getCurrentFormattedTime() && alarm.canCall) {
           alarm.canCall = false
           alarm.callback()
         }
@@ -43,8 +44,8 @@ class AlarmClock {
   }
   
   stop() {
-    clearInterval();
-    this.intervaldId = null;
+    clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 
   resetAllCalls() {
@@ -52,7 +53,8 @@ class AlarmClock {
   }
 
   clear() {
-    stop(this.intervaldId)
+    stop(this.intervalId)
     this.alarmCollection = [];
   }
 }
+
